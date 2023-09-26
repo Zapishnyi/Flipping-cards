@@ -44,7 +44,7 @@ function card_flip(counter_before_array, counter_after_array) {
       let img_name_before = num_list[counter_before_array[cell_index]];
       // upper flip card style
       temp_half_up.style.cssText =
-        'animation:card_rotate_1 0.2s; animation-fill-mode: forwards; background-image: url("' +
+        'animation:card_rotate_1 0.2s linear forwards; background-image: url("' +
         img_name_before +
         '")';
       // upper flip card creation
@@ -62,7 +62,7 @@ function card_flip(counter_before_array, counter_after_array) {
         temp_half_up.remove();
         // bottom flip card animation, number
         temp_half_down.style.cssText =
-          'animation:card_rotate_2 0.2s;  animation-fill-mode: forwards; background-image: url("' +
+          'animation: card_rotate_2 0.2s  linear  forwards; background-image: url("' +
           img_name_after +
           '");';
         // bottom flip card creation
