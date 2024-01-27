@@ -1,8 +1,8 @@
-// udjustable delay for flip cards
+// adjustable delay for flip cards
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-// number img assign, transcoded from svg
+// number img assign, transcode from svg
 const num_list = [
   "data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_429_11154)'%3E%3Cpath d='M12 20C14.7614 20 17 17.7614 17 15V9C17 6.23858 14.7614 4 12 4C9.23858 4 7 6.23858 7 9V15C7 17.7614 9.23858 20 12 20Z' stroke='%23292929' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_429_11154'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E",
   "data:image/svg+xml,%3Csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_429_11003)'%3E%3Cpath d='M12 20V4L9 7' stroke='%23292929' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_429_11003'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E",
@@ -23,8 +23,8 @@ flip_control_screen.textContent = "000000";
 let counter = 0;
 // card flip initiation function
 function card_flip_initiation() {
-  counter_before = counter_after;
-  if (counter !== "999999") {
+ let counter_before = counter_after;
+  if (counter !== 999999) {
     counter++;
   }
   let counter_string = "000000" + counter;
@@ -36,7 +36,7 @@ function card_flip_initiation() {
 }
 // card flip function
 function card_flip(counter_before_array, counter_after_array) {
-  for (let cell_index = 5; cell_index != -1; cell_index--) {
+  for (let cell_index = 5; cell_index !== -1; cell_index--) {
     if (counter_before_array[cell_index] !== counter_after_array[cell_index]) {
       let temp_half_up = document.createElement("div");
       temp_half_up.className = "temp_half_up";
